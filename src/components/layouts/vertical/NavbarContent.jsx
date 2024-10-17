@@ -2,7 +2,7 @@
 import classnames from 'classnames'
 
 // Component Imports
-import NavToggle from './NavToggle'
+import NavToggle from '@/components/layouts/vertical/NavToggle'
 import NavSearch from '@/components/layouts/shared/search'
 import LanguageDropdown from '@/components/layouts/shared/LanguageDropdown'
 import ModeDropdown from '@/components/layouts/shared/ModeDropdown'
