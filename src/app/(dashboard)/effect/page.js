@@ -5,22 +5,24 @@ import { useEffect, useState } from "react"
 
 const MyUseEffect = () => {
 
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(0)
+
+    console.log(count)
 
     useEffect(() => {
 
-        let timer = setTimeout(() => {
-            setCount( co => co + 1)
+        const timer = setTimeout(() => {
+            setCount( currentCount => currentCount + 1)
         }, 1000)
 
-        return clearTimeout(timer)
+        //return clearTimeout(timer)
     })
 
-    return <>
-    
-        counter: {count}
+    return (
+    <>    
+      {count}
     </>
-
+    )
 }
 
 export default MyUseEffect

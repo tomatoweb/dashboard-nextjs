@@ -1,6 +1,6 @@
 "use client"
 
-import { Toaster, toast } from "sonner";
+import { Toaster, toast } from "sonner"; // npm install sonner
 import React, { useEffect, useState } from "react";
 import UsersList from "./UsersList" // becomes a client component
 
