@@ -72,9 +72,9 @@ const VerticalMenu = ({ dictionary, scrollMenu }) => {
           icon={<i className='tabler-smart-home' />}
           suffix={<CustomChip label='3' size='small' color='error' round='true' />}
         >
-          <MenuItem href={`#`}>{dictionary['navigation'].crm}</MenuItem>
+          <MenuItem className="notallowed" href={`#`}>{dictionary['navigation'].crm}</MenuItem>
           <MenuItem href={`/dashboards/analytics`}>{dictionary['navigation'].analytics}</MenuItem>
-          <MenuItem href={`#`}>{dictionary['navigation'].eCommerce}</MenuItem>
+          <MenuItem className="notallowed" href={`#`}>{dictionary['navigation'].eCommerce}</MenuItem>
         </SubMenu>
         <MenuSection label={dictionary['navigation'].appsPages}>
 				<SubMenu label={dictionary['navigation'].pages} icon={<i className='tabler-file' />}>
