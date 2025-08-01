@@ -1,3 +1,9 @@
+
+---------------------------------------------------------------------------
+Login problem ?
+Check the port number in NEXT_PUBLIC_APP_URL const in .env file  --> localhost:3000 (adapt it)
+----------------------------------------------------------------------------
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

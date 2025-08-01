@@ -18,6 +18,7 @@
         "roles": "Roles",
         "permissions": "Permissions",
         "pages": "Pages",
+        "childrenPattern": "Children Pattern",
         "userProfile": "User Profile",
         "accountSettings": "Account Settings",
         "faq": "FAQ",

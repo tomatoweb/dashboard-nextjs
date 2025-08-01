@@ -104,7 +104,7 @@ const ModeDropdown = () => {
                     onClick={() => handleModeSwitch('system')}
                     selected={settings.mode === 'system'}
                   >
-                    <i className='tabler-device-laptop text-[22px]' />
+                    <i className='tabler-michelin-bib-gourmand text-[22px]' />
                     System
                   </MenuItem>
                 </MenuList>

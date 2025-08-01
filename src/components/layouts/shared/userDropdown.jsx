@@ -74,7 +74,8 @@ const UserDropdown = () => {
       await signOut({ redirect: false })
 
       // Redirect to login page
-      router.push(getLocalizedUrl('/login', locale))
+      router.push('/login') // without locale
+      // router.push(getLocalizedUrl('/login', locale)) // with locale
     } catch (error) {
       console.error(error)
 

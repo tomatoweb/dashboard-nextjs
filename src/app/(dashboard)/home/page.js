@@ -12,9 +12,9 @@ const Home = () => {
 
     useEffect(() => {
         fetch('https://jsonplaceholder.typicode.com/users')
-            .then( response => response.json()) // implicit return
-            .then( json => { setUsers(json) })  // body braces, no return
-        },[] // fetch on mount Home
+            .then( response => response.json()) // fetch returns a promise, this transform the promise in an object
+            .then( json => { setUsers(json) })  // arrow function with body braces, no return
+        },[] // fetch once on mount Home
     )
 
     

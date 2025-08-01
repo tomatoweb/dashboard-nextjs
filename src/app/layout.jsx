@@ -3,9 +3,10 @@ import 'react-perfect-scrollbar/dist/css/styles.css'
 import '@/app/globals.css'
 import '@/assets/iconify-icons/generated-icons.css'
 
+// <head><meta charset="UTF-8" /></head>
 export const metadata = {
-  title: 'DotDev - MUI Next.js App',
-  description: 'MUI v5 Next.js v14 App'
+  title: 'MUI Next.js App',
+  description: 'Next 14 MUI 5' // <head><meta name="description" content="Next 14 MUI 5" /></head>
 }
 
 const RootLayout = ({ children }) => {

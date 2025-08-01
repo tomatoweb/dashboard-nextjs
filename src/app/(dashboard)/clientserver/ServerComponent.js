@@ -1,15 +1,12 @@
 
 
-export default async function ServerComponent() {
-            
-        
-        console.log('server data are not in client browser')
+export default function ServerComponent() {
 
-        return (
-            <div>
-                server component is child from client component
-            </div>
-        )
+	return (
+		<div className="bg-slate-400 mt-6 py-4 mx-12 text-black">
+			This is a server component in a client component
+		</div>
+	)
 
 }
 

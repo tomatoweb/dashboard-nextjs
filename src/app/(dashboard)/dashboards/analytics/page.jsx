@@ -1,6 +1,8 @@
 import { Grid } from "@mui/material"
 import WebsiteAnalyticsSlider from './WebsiteAnalyticsSlider'
 import LineAreaDailySalesChart from './LineAreaDailySalesChart'
+import SalesOverview from "./SalesOverview"
+import EarningReports from "./EarningReports"
 
 const DashboardAnalytics = async () => {
 
@@ -21,36 +23,28 @@ const DashboardAnalytics = async () => {
   return (
     <Grid container spacing={6}>
       <Grid item xs={12} lg={6}>
-        dcgxfhnsxfhj
         <WebsiteAnalyticsSlider />
       </Grid>
       <Grid item xs={12} sm={6} lg={3}>
-        fdjdj
         <LineAreaDailySalesChart />
-      </Grid>
+      </Grid>      
       <Grid item xs={12} sm={6} lg={3}>
-
+        <SalesOverview />
       </Grid>
       <Grid item xs={12} md={6}>
-
+        <EarningReports />
       </Grid>
       <Grid item xs={12} md={6}>
-
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
-
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
-
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
-
       </Grid>
       <Grid item xs={12} md={6} lg={4}>
-
       </Grid>
       <Grid item xs={12} lg={8}>
-
       </Grid>
     </Grid>
   )

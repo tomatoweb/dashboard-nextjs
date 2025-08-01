@@ -18,7 +18,7 @@ const Providers = props => {
         <NextAuthProvider basePath={process.env.NEXTAUTH_BASEPATH}>
             <VerticalNavProvider>    
                 <SettingsProvider settingsCookie={settingsCookie} mode={mode} demoName={demoName}>
-                    <ThemeProvider systemMode={systemMode}>
+                    <ThemeProvider systemMode={'dark'}>
                     {children}
                     </ThemeProvider>
                 </SettingsProvider>

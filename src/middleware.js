@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server'
 import { withAuth } from 'next-auth/middleware'
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import { ensurePrefix, withoutSuffix } from '@/utils/string'
+import { Console } from 'console'
 
 const HOME_PAGE_URL = '/dashboards/analytics'
 
@@ -17,25 +18,26 @@ export default withAuth(
 
     async function middleware(request) {
         
-        // If the user is not logged (request.nextauth.token is null)
+        // NOT LOGGED AND NOT /login
         if ( !request.nextauth.token && request.nextUrl.pathname !== '/login' ) {
             
             let loginRoute = '/login'
             
-            if (!(request.nextUrl.pathname === '/')) {
-          
+						// User's requesting some particular page
+            if (!(request.nextUrl.pathname === '/')) {          
 
-                // Add the user's requested route in the URL as a new param like this:   /login?redirectTo=%2Frequested_route
+                // Add this page route in the URL as a new param e.g.  /login?redirectTo=%2F_requested_page_
                 const searchParamsStr = new URLSearchParams({ redirectTo: request.nextUrl.pathname }).toString()
                                 
-                loginRoute += `?${searchParamsStr}`   // /login?redirectTo=%2Frequested_route
+                loginRoute += `?${searchParamsStr}`   // e.g. /login?redirectTo=%2F_requested_route_
             }
-
+						  
             const loginUrl = new URL( loginRoute, request.url ).toString() // e.g.   http://localhost:3002/login?redirectTo=%2Fhome
-
+						
             return NextResponse.redirect(loginUrl)
         }        
 
+				// LOGGED AND /login
         if ( request.nextauth.token && request.nextUrl.pathname === '/login' ) {
 
             const redirectUrl = new URL( HOME_PAGE_URL, request.url ).toString()
@@ -43,12 +45,16 @@ export default withAuth(
             return NextResponse.redirect(redirectUrl)
         }        
  
+ 				// If the script arrives here: user is NOT LOGGED and route is /login
+				// or user IS LOGGED and route is ANY except /login
         // If the user is logged in and is trying to access root page, redirect to the home page
         if (request.nextUrl.pathname === '/') {
             const redirectUrl = new URL( HOME_PAGE_URL, request.url ).toString()
 
             return NextResponse.redirect(redirectUrl)
         }
+
+
 
         // If pathname already contains a locale, return next() else redirect with localized URL
         //return isUrlMissingLocale(pathname) ? localizedRedirect(pathname, locale, request) : NextResponse.next()
