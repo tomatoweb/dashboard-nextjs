@@ -1,8 +1,5 @@
 import { NextResponse } from 'next/server'
 import { withAuth } from 'next-auth/middleware'
-import { match as matchLocale } from '@formatjs/intl-localematcher'
-import { ensurePrefix, withoutSuffix } from '@/utils/string'
-import { Console } from 'console'
 
 const HOME_PAGE_URL = '/dashboards/analytics'
 
