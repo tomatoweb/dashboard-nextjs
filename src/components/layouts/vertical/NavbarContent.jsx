@@ -2,13 +2,13 @@
 import classnames from 'classnames'
 
 // Component Imports
-import NavToggle from '@/components/layouts/vertical/NavToggle'
+// import NavToggle from '@/components/layouts/vertical/NavToggle'
 import NavSearch from '@/components/layouts/shared/search'
 import LanguageDropdown from '@/components/layouts/shared/LanguageDropdown'
 import ModeDropdown from '@/components/layouts/shared/ModeDropdown'
 import ShortcutsDropdown from '@/components/layouts/shared/ShortcutsDropdown'
 import NotificationsDropdown from '@/components/layouts/shared/NotificationsDropdown'
-import UserDropdown from '@/components/layouts/shared/UserDropdown'
+// import UserDropdown from '@/components/layouts/shared/UserDropdown'
 
 // Util Imports
 import { verticalLayoutClasses } from '@/components/layouts/utils/layoutClasses'
@@ -105,7 +105,6 @@ const NavbarContent = () => {
   return (
     <div className={classnames(verticalLayoutClasses.navbarContent, 'flex items-center justify-between gap-4 is-full')}>
       <div className='flex items-center gap-4'>
-        <NavToggle />
         <NavSearch />
       </div>
       <div className='flex items-center'>
@@ -113,7 +112,7 @@ const NavbarContent = () => {
         <ModeDropdown />
         <ShortcutsDropdown shortcuts={shortcuts} />
         <NotificationsDropdown notifications={notifications} />
-        <UserDropdown />
+        
       </div>
     </div>
   )
