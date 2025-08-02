@@ -4,19 +4,19 @@ import LineAreaDailySalesChart from './LineAreaDailySalesChart'
 import SalesOverview from "./SalesOverview"
 import EarningReports from "./EarningReports"
 
-const DashboardAnalytics = async () => {
+const getData = async () => {
 
-  const getData = async () => {
+	// Vars
+	const res = await fetch(`${process.env.API_URL}/pages/profile`)
 
-    // Vars
-    const res = await fetch(`${process.env.API_URL}/pages/profile`)
+	if (!res.ok) {
+		throw new Error('Failed to fetch profileData')
+	}
 
-    if (!res.ok) {
-      throw new Error('Failed to fetch profileData')
-    }
+	return res.json()
+}
 
-    return res.json()
-  }
+const DashboardAnalytics = async () => {  
 
   const data = await getData()
 
@@ -45,6 +45,7 @@ const DashboardAnalytics = async () => {
       <Grid item xs={12} md={6} lg={4}>
       </Grid>
       <Grid item xs={12} lg={8}>
+				{/* <ProjectsTable projectTable={data?.users.profile.projectTable} /> */}
       </Grid>
     </Grid>
   )
